@@ -25,7 +25,7 @@ SECRET_KEY = '58b#p5fc)_z^l$tlhf-4u^l(%doc)6b4rw-98k9e&03_$xy61p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-kdkybgh5.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-kdkybgh5.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'puzzles.apps.PuzzlesConfig'
 ]
 
 MIDDLEWARE = [
