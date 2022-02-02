@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Question, Player, Submissions
+from .models import Question, Player, Submission
 
 class QuestionAdmin(admin.ModelAdmin):
 	fieldsets = [
@@ -13,5 +13,5 @@ class QuestionAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Player)
-admin.site.register(Submissions)
+admin.site.register(Submission)
 

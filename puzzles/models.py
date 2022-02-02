@@ -18,13 +18,13 @@ class Player(models.Model):
 	def __str__(self):
 		return self.username
 	
-class Submissions(models.Model):
+class Submission(models.Model):
 	player_id = models.ForeignKey(Player, on_delete = models.CASCADE)
 	question = models.ForeignKey(Question, on_delete = models.CASCADE)
 	submission_date = models.DateTimeField('submission date', auto_now_add = True, blank = True)
 	answer = models.CharField(max_length = 1000)
-	correct = models.IntegerField(default=0)
+	correct = models.CharField(max_length = 3, choices=(('Yes','Yes'), ('No', 'No')))
 	def __str__(self):
-		return self.correct
+		return self.answer
 	
 
