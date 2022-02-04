@@ -1,8 +1,15 @@
-{% load render_table from django_tables2 %}
 {% load static %}
-<!doctype html>
-<html>
-    <body>
-        {% render_table result %}
-    </body>
-</html>
+
+<link rel="stylesheet" type="text/css" href="{% static 'puzzles/style.css' %}">
+  <table>
+    <tr>
+      <th>Player ID</th>
+      <th>Number of Correct Submissions</th>
+    </tr>
+    {% for item in result %}
+      <tr>
+        <td>{{ item.player_id }}</td>
+        <td>{{ item.nright }}</td>
+      </tr>
+    {% endfor %}
+  </table>

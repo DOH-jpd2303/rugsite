@@ -22,5 +22,5 @@ def submission(request, question_id):
 	return HttpResponse("You're submitting for question %s." % question_id)
 	
 def leaderboard(request):
-	result = Submission.objects.values_list('player_id')	
-	return render(request, 'puzzles/leaderboard.html', locals())
+	result = Submission.objects.values('player_id').annotate(nright = Count('correct')).order_by()
+	return render(request, 'puzzles/leaderboard.html', {'result': result})
